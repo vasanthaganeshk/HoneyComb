@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import urllib2
-
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -17,13 +16,7 @@ soup = BeautifulSoup(selec)
 dicts = soup.findAll("h3", {"class":"source"})
 prob = soup.findAll("ul")
 
-'''
-for i, j in zip(dicts, prob):
-    print "HEADING: {}".format(str(i))
-    print "MEANING: {}".format(str(j))
-'''
-
-f = open('output.txt', 'w')
+f = open(sys.argv[1], 'w')
 sys.stdout = f
 
 print(soup.get_text())
