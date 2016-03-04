@@ -84,7 +84,7 @@ void search()
 	
 	if(fexists(word))
 	{
-		sprintf(script,"gedit %s",word);
+		sprintf(script,"less %s",word);
 		system(script);
 	}
 	else
@@ -165,7 +165,7 @@ void admin()
 					break;
 					
 			case 3:	flag=1;
-		}
+		};
 		if(flag!=1)
 		{
 			goto label;
@@ -275,32 +275,10 @@ void border()
 
 // The main function of the program
  
-int main()
+int main(const int argc, const char *argv)
 {
     add("hello");
     search();
-	/*int choice;
- 	start:
- 	system("clear");
- 	border();
- 	cout<<endl<<"\t\t\t\t Honeycomb the offline dictionary"<<endl;
- 	border();
- 	cout<<endl<<endl<<endl<<endl;
- 	cout<<setw(50)<<"1. Sign up"<<endl<<setw(49)<<"2. Log in"<<endl<<setw(48)<<"3. Admin"<<endl<<endl;
- 	border();
- 	cout<<endl<<endl<<"Choice :";
- 	cin>>choice;
- 	switch(choice)
- 	{
- 		case 1:	add_account();
- 	            goto start;
- 	        
- 		case 2: verify_account();
- 		        break;
- 		        
- 		case 3: admin();
-    }			
- 		*/
   	return(0);	
 }
 
